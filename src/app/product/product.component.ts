@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
   title = "Ürün Listesi"
   products : Product[] = [
     {id:1, name: "laptop", price:2500, categoryId:1, description: "Asus Zenbook", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Mouse", price:100, categoryId:2, decription: "Logitech", imageUrl:"https://images-na.ssl-images-amazon.com/images/I/411AmauHLuL._AC_SY780_.jpg"}
+    {id:2, name: "Mouse", price:100, categoryId:2, description: "Logitech", imageUrl:"https://images-na.ssl-images-amazon.com/images/I/411AmauHLuL._AC_SY780_.jpg"}
   ]
 
   ngOnInit(): void {
