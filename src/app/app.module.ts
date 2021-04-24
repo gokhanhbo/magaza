@@ -8,7 +8,6 @@ import { NavComponent } from './nav/nav.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { ProductFilterPipe } from './product/product-filter.pipe';
-import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 
 @NgModule({
