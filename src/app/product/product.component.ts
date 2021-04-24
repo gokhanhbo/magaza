@@ -9,6 +9,7 @@ export class ProductComponent implements OnInit {
 
   constructor() { }
   title = "Ürün Listesi"
+  products: any[] ;
 
   ngOnInit(): void {
   }
