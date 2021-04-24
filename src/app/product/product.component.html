@@ -11,7 +11,7 @@
     <div *ngFor="let product of products" class="card" style="width: 18rem;">
         <img  class="card-img-top" [src]="product.imageUrl"  alt="Card image cap">
         <div class="card-body">
-            <h5 class="card-title">{{product.name | uppercase }} {{product.price | currency:'TL':true}}</h5>
+            <h5 class="card-title">{{product.name | uppercase }} {{product.price | currency:'TRY':true:"1.2-2"}}</h5>
             <p class="card-text">{{product.description}}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
