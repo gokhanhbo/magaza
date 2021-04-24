@@ -9,7 +9,10 @@ export class ProductComponent implements OnInit {
 
   constructor() { }
   title = "Ürün Listesi"
-  products : any[] 
+  products : any[] = [
+    {id:1, name: "laptop", price:2500, categoryId:1, description: "Asus Zenbook"},
+    {id:2, name: "Mouse", price:100, categoryId:2, decription: "Logitech"}
+  ]
 
   ngOnInit(): void {
   }
