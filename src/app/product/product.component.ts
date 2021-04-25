@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
-import {AlertifyService} from '../services/alertify.service'
+import { AlertifyService } from '../services/alertify.service';
+import { HttpClient } from '@angular/common/http'
+
 
 @Component({
   selector: 'app-product',
@@ -9,23 +11,18 @@ import {AlertifyService} from '../services/alertify.service'
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private alertifyService:AlertifyService) { }
+  constructor(private alertifyService: AlertifyService, private http: HttpClient) { }
   title = "Ürün Listesi"
   filterText = ""
-  products : Product[] = [
-    {id:1, name: "laptop", price:2500, categoryId:1, description: "Asus Zenbook", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Mouse", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Book", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Music Disk", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "USB Cable", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Tablet", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"},
-    {id:2, name: "Keyboard", price:100, categoryId:2, description: "Logitech", imageUrl:"https://productimages.hepsiburada.net/s/41/375/10688626163762.jpg"}
-  ]
+  products: Product[];
 
   ngOnInit(): void {
+    this.http.get<Product[]>('http://localhost:3000/products').subscribe(data => {
+      this.products = data
+    });
   }
 
-  addToCart(product){
+  addToCart(product) {
     this.alertifyService.success(product.name + " Sepete Eklendi.")
   }
 
