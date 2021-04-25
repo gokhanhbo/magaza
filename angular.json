@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              ".._node_models_alertifyjs/build/alertify.min.js"
+            ]
           },
           "configurations": {
             "production": {
