@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product){
-    alertify.success("add")
+    alertify.success("Sepete Eklendi :)")
   }
 
 }
