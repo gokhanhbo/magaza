@@ -24,8 +24,8 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(){
-    alert("Sepete Eklendi")
+  addToCart(product){
+    alert("Sepete Eklendi : "+ product.name)
   }
 
 }
