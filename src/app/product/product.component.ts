@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product){
-    this.alertifyService.success(product.name + "Sepete Eklendi.")
+    this.alertifyService.success(product.name + " Sepete Eklendi.")
   }
 
 }
