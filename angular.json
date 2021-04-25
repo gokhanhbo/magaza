@@ -31,7 +31,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              ".._node_models_alertifyjs/build/alertify.min.js"
+              "./node_models/alertifyjs/build/alertify.min.js"
             ]
           },
           "configurations": {
