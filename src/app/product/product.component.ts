@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   products: Product[];
 
   ngOnInit(): void {
-    this.http.get<Product[]>('http://localhost:3000/products').subscribe(data => {
+    this.http.get<Product[]>('http://159.89.31.194:4000/products').subscribe(data => {
       this.products = data
     });
   }
