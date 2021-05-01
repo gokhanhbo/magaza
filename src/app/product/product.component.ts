@@ -15,9 +15,10 @@ export class ProductComponent implements OnInit {
   title = "Ürün Listesi"
   filterText = ""
   products: Product[];
+  dbpath: 'http://159.89.31.194:4000/products';
 
   ngOnInit(): void {
-    this.http.get<Product[]>('http://159.89.31.194:4000/products').subscribe(data => {
+    this.http.get<Product[]>(this.dbpath).subscribe(data => {
       this.products = data
     });
   }
