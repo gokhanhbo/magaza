@@ -11,8 +11,13 @@ export class ProductService {
   dbpath = 'http://159.89.31.194:4000/products';
 
   getProducts(categoryId):Observable<Product[]>{
+let newPath = this.dbpath;
+if(categoryId){
+  newPath =newPath + "?categoryId="+categoryId
+}
+
     return this.http
-      .get<Product[]>(this.dbpath +"?categoryId="+categoryId).pipe(
+      .get<Product[]>(newPath).pipe(
         tap(data=>console.log(JSON.stringify(data))),
         catchError(this.handleError),
       );
