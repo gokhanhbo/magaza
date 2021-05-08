@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   dbpath = 'http://159.89.31.194:4000/products';
 
-  getProducts():Observable<Product[]>{
+  getProducts(categoryId):Observable<Product[]>{
     return this.http
       .get<Product[]>(this.dbpath).pipe(
         tap(data=>console.log(JSON.stringify(data))),
