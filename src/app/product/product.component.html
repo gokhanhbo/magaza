@@ -1,12 +1,7 @@
 <!-- <h3 *ngIf="products; else: noProduct">{{title}}</h3> -->
 
-<div class="mb-3">
-    <input 
-        class="form-control" 
-        id="productName" 
-        placeholder="Aranacak ürünü giriniz."
-        [(ngModel)]="filterText"
-    />
+<div class="form-group">
+    <input class="form-control" id="productName" placeholder="Aranacak ürünü giriniz." [(ngModel)]="filterText" />
     <small *ngIf="filterText" class="form-text text-muted">Şuan <strong>{{filterText}}</strong> aradınız.</small>
 </div>
 
@@ -18,7 +13,8 @@
         </div>
     </ng-template>
 
-    <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox" style="width: 18rem;">
+    <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox"
+        style="width: 18rem;">
         <img class="card-img-top" [src]="product.imageUrl" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{product.name | uppercase }} {{product.price | currency:'TRY ':true:"1.2-2"}}</h5>
