@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Category } from 'src/app/category/category';
 import { CategoryComponent } from 'src/app/category/category.component';
 import { CategoryService } from 'src/app/services/category.service';
@@ -20,6 +21,10 @@ export class ProductAddForms1Component implements OnInit {
       this.categoryService.getCategories().subscribe(data=>{
         this.categories = data
       });
+    }
+
+    add(form:NgForm){
+      
     }
 
 }
