@@ -25,6 +25,7 @@ export class ProductAddForms1Component implements OnInit {
 
     add(form:NgForm){
       
+      
     }
 
 }
