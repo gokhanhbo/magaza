@@ -8,11 +8,37 @@
     </div>
 
     <div class="form-group">
-        <input type="text" name="description" id="description" formControlName="description" 
-            placeholder="Açıklama" class="form-control">
+        <input type="text" name="description" id="description" formControlName="description" placeholder="Açıklama"
+            class="form-control">
         <div class="alert alert-danger"
             *ngIf="productAddForm.get('description').hasError('required') && productAddForm.get('description').dirty">
             Açıklama giriniz!</div>
     </div>
+
+    <div class="form-group">
+        <input type="text" name="imageUrl" id="imageUrl" formControlName="imageUrl" placeholder="Resim Adresi"
+            class="form-control">
+        <div class="alert alert-danger"
+            *ngIf="productAddForm.get('imageUrl').hasError('required') && productAddForm.get('imageUrl').dirty">
+            Fotoğraf adresi giriniz!</div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="price" id="price" formControlName="price" placeholder="Fiyatı giriniz."
+            class="form-control">
+        <div class="alert alert-danger"
+            *ngIf="productAddForm.get('price').hasError('required') && productAddForm.get('price').dirty">
+            Fiyat bilgisi giriniz!</div>
+    </div>
+    <div class="form-group">
+        <select class="form-control" formControlName="categoryId" required id="categoryId"
+            name="categoryId">
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+        <div *ngIf="productAddForm.get('categoryId').hasError('required') && productAddForm.get('categoryId').touched" class="alert alert-danger">Kategory gereklidir.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">Ürün ekle</button>
+
+
 
 </form>
