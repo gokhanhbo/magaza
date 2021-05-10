@@ -1,5 +1,5 @@
 <h3>Yeni Ürün Ekle</h3>
-<form #productAddForm="ngForm" (ngsubmit)="add(productAddForm)">
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
     <div class="form-group">
         <input type="text" placeholder="Ürün adı" #name="ngModel" [(ngModel)]="model.name" class="form-control"
             name="name" id="name" required>
