@@ -27,6 +27,7 @@ export class ProductAddForms2Component implements OnInit {
   }
 
   ngOnInit(): void {
+    this.createProductAddFrom();
   }
 
   add() {
