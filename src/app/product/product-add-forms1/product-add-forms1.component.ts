@@ -13,7 +13,7 @@ import { Product } from '../product';
 })
 export class ProductAddForms1Component implements OnInit {
 
-  constructor(private categoryService:CategoryComponent) { }
+  constructor(private categoryService:CategoryService) { }
     model : Product = new Product();
     categories: Category[];
 
@@ -24,7 +24,7 @@ export class ProductAddForms1Component implements OnInit {
     }
 
     add(form:NgForm){
-      
+
       
     }
 
