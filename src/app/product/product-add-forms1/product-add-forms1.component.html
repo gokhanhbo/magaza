@@ -21,10 +21,8 @@
         <div *ngIf="price.invalid&&price.dirty" class="alert alert-danger">Ürün fiyatı gereklidir.</div>
     </div>
     <div class="form-group">
-        <select>
-            <option *ngFor="let category of categories" [value]="category.id" #categoryId="ngModel" [(ngModel)]="model.categoryId" required
-                id="categoryId" name="categoryId">
-            </option>
+        <select class="form-control" #categoryId="ngModel" [(ngModel)]="model.categoryId" required id="categoryId" name="categoryId">
+            <option *ngFor="let category of categories" [value]="category.id"></option>
         </select>
         <div *ngIf="categoryId.invalid&&categoryId.touched" class="alert alert-danger">Kategory gereklidir.</div>
     </div>
