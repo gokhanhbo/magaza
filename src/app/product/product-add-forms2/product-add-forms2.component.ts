@@ -14,7 +14,7 @@ export class ProductAddForms2Component implements OnInit {
   ) { }
 
   productAddForm: FormGroup;
-  product: Product = new Product();
+  product:Product = new Product();
 
   createProductAddFrom() {
     this.productAddForm = this.formBuilder.group({
