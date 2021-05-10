@@ -7,4 +7,12 @@
             giriniz!</div>
     </div>
 
+    <div>
+        <input type="text" name="description" id="description" formControlName="description" class="form-control"
+            placeholder="Açıklama">
+        <div class="alert-danger"
+            *ngIf="productAddForm.get('description').hasError('required') && productAddForm.get('description').dirty">
+            Açıklama giriniz!</div>
+    </div>
+
 </form>
