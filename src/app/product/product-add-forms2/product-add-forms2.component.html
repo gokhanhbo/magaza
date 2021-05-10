@@ -1,1 +1,8 @@
-<p>product-add-forms2 works!</p>
+<h3>Yeni Ürün Ekle - Reactive</h3>
+<form [formGroup]="productAddForm" (ngSubmit)="add()" class="form-group">
+    <div>
+        <input type="text" name="name" id="name" fromControlName="name" class="form-control" placeholder="Ürün adı">
+        <div *ngIf="productAddForm.get('name').hasError('required') && productAddForm.get('name').dirty" class="alert-danger">Ürün adı giriniz!</div>
+    </div>
+
+</form>
