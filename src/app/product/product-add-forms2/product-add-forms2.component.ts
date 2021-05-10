@@ -22,7 +22,7 @@ export class ProductAddForms2Component implements OnInit {
   ) { }
 
   productAddForm: FormGroup;
-  product:Product = new Product();
+  product: Product = new Product();
   categories: Category[];
 
   createProductAddFrom() {
@@ -37,16 +37,16 @@ export class ProductAddForms2Component implements OnInit {
 
   ngOnInit(): void {
     this.createProductAddFrom();
-    this.categoryService.getCategories().subscribe(data=>{
+    this.categoryService.getCategories().subscribe(data => {
       this.categories = data
-    })
+    });
   }
 
   add() {
     if (this.productAddForm.valid) {
       this.product = Object.assign({}, this.productAddForm.value)
     }
-    this.productService.addProduct(this.product).subscribe(data=>{
+    this.productService.addProduct(this.product).subscribe(data => {
       this.alertifyService.success(data.name + " başarı ile eklendi.")
     });
   }
