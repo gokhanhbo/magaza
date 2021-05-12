@@ -10,7 +10,7 @@ export class AppComponent {
   constructor(private accountService:AccountService){}
   title = 'magaza';
 
-  isLoggedin(){
+  isLoggedIn(){
     return this.accountService.isLoggedIn();
   }
   logOut(){
