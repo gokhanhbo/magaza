@@ -5,6 +5,7 @@ import { LoginGuard } from './login/login.guard';
 import { ProductAddForms1Component } from './product/product-add-forms1/product-add-forms1.component';
 import { ProductAddForms2Component } from './product/product-add-forms2/product-add-forms2.component';
 import { ProductComponent } from './product/product.component';
+import { SepetComponent } from './sepet/sepet.component';
 
 const routes: Routes = [
   {path:'products', component: ProductComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'', redirectTo: 'products', pathMatch:'full'},
   {path:'products/category/:categoryId', component:ProductComponent},
   {path:'login', component: LoginComponent},
+  {path:'sepet', component:SepetComponent},
 ];
 
 @NgModule({
