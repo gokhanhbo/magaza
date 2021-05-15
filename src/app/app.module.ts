@@ -15,6 +15,7 @@ import { ProductAddForms2Component } from './product/product-add-forms2/product-
 import { LoginComponent } from './login/login.component';
 import { AccountService } from './services/account.service';
 import { LoginGuard } from './login/login.guard';
+import { SepetComponent } from './sepet/sepet.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginGuard } from './login/login.guard';
     ProductFilterPipe,
     ProductAddForms1Component,
     ProductAddForms2Component,
-    LoginComponent
+    LoginComponent,
+    SepetComponent
   ],
   imports: [
     BrowserModule,
