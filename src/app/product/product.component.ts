@@ -10,7 +10,7 @@ import { SepetComponent } from '../sepet/sepet.component';
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  providers: [ProductService, SepetComponent],
+  providers: [ProductService],
 })
 
 export class ProductComponent implements OnInit {
