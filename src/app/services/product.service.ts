@@ -11,6 +11,8 @@ export class ProductService {
   dbpath = 'http://159.89.31.194:4000/products';
 
 
+
+
   getProducts(categoryId): Observable<Product[]> {
     let newPath = this.dbpath;
     if (categoryId) {
@@ -32,11 +34,15 @@ export class ProductService {
       })
     }
 
-    return this.http.post<Product>(this.dbpath, product, httpOptions).pipe(
+    return this.http
+      .post<Product>(this.dbpath, product, httpOptions).pipe(
       tap(data => console.log(JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
+
+  
+
 
 
 
