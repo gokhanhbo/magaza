@@ -21,7 +21,7 @@
         <div class="card-body">
             <h5 class="card-title">{{product.name | uppercase }} {{product.price | currency:'TRY ':true:"1.2-2"}}</h5>
             <p class="card-text">{{product.description}}</p>
-            <a (click)="addToCart(product)" class="btn btn-primary">Sepete Ekle</a>
+            <a type="submit "(click)="addToCart(product)" class="btn btn-primary" routerLink="/sepet" >Sepete Ekle</a>
         </div>
     </div>
 
