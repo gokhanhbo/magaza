@@ -42,11 +42,15 @@ export class ProductComponent implements OnInit {
         'Content-Type': 'application/json',
         'Authorization': 'Token'
       })
-        }
+    }
+
+    this.alertifyService.success(Product.name + " başarı ile eklendi.")
 
     return this.http.post<Product>(this.dbpath, product, httpOptions).pipe(tap(data => console.log(JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+      catchError(this.handleError)
+    );
+
+
   }
   handleError(handleError: any): import("rxjs").OperatorFunction<Product, any> {
     throw new Error('Method not implemented.');
