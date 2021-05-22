@@ -16,12 +16,12 @@
     </ng-template>
 
     <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox"
-        style="width: 18rem;" (ngSubmit)="addToCart">
+        style="width: 18rem;" >
         <img class="card-img-top" [src]="product.imageUrl" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{product.name | uppercase }} {{product.price | currency:'TRY ':true:"1.2-2"}}</h5>
             <p class="card-text">{{product.description}}</p>
-            <a type="submit "(click)="addToCart(product)" class="btn btn-primary" >Sepete Ekle</a>
+            <a (click)="addToCart(product)" class="btn btn-primary" >Sepete Ekle</a>
         </div>
     </div>
 
