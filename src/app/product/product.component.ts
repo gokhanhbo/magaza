@@ -44,7 +44,7 @@ export class ProductComponent implements OnInit {
       })
     }
 
-    this.alertifyService.success(Product.name + " başarı ile eklendi.")
+    this.alertifyService.success(product.name + " başarı ile eklendi.")
 
     return this.http.post<Product>(this.dbpath, product, httpOptions).pipe(tap(data => console.log(JSON.stringify(data))),
       catchError(this.handleError)
