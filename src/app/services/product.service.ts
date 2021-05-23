@@ -9,7 +9,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
   dbpath = 'http://159.89.31.194:4000/products';
-
+  sepetpath='http://159.89.31.194:4000/sepet';
 
 
 
@@ -35,7 +35,7 @@ export class ProductService {
     }
 
     return this.http
-      .post<Product>(this.dbpath, product, httpOptions).pipe(
+      .post<Product>(this.sepetpath, product, httpOptions).pipe(
       tap(data => console.log(JSON.stringify(data))),
       catchError(this.handleError)
     );
