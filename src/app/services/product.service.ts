@@ -41,6 +41,21 @@ export class ProductService {
     );
   }
 
+  addToCart(product: Product): Observable<Product> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Token'
+      })
+    }
+    
+    return this.http.post<Product>(
+      this.dbpath, product, httpOptions)
+      .pipe(tap(data => console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+
   
 
 
