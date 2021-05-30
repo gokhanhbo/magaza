@@ -24,24 +24,26 @@ export class ProductComponent implements OnInit {
     private alertifyService: AlertifyService,
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private categoryService:CategoryService, 
+    private categoryService: CategoryService,
     private http: HttpClient,
   ) { }
   title = "Ürün Listesi"
   filterText = ""
   products: Product[];
-  model : Product = new Product();
+  model: Product = new Product();
   categories: Category[];
   dbpath = 'http://159.89.31.194:4000/sepet';
 
-  ngOnInit() {
-    this.categoryService.getCategories().subscribe(data=>{
-      this.categories = data
-    });
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.productService.getProducts(params["categoryId"]).subscribe(data => {
+        this.categories = data
+      });
+    })
   }
 
-  add(form:NgForm){
-    this.productService.addToCart(this.model).subscribe(data=>{
+  add(form: NgForm) {
+    this.productService.addToCart(this.model).subscribe(data => {
       this.alertifyService.success(data.name + " başarı ile eklendi.")
     });
   }
