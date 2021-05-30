@@ -41,7 +41,7 @@ export class ProductComponent implements OnInit {
   }
 
   add(form:NgForm){
-    this.productService.addProduct(this.model).subscribe(data=>{
+    this.productService.addToCart(this.model).subscribe(data=>{
       this.alertifyService.success(data.name + " başarı ile eklendi.")
     });
   }
